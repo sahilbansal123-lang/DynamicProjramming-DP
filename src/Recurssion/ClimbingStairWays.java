@@ -1,3 +1,5 @@
+package Recurssion;
+
 public class ClimbingStairWays {
 
     public static int climbingStairsWays(int n) {
