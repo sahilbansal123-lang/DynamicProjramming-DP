@@ -2,9 +2,9 @@ package Tabulation;
 
 public class TargetSum {
 
-    public static boolean targetSum(int arr[], int sum) {
+    public static boolean targetSum(int[] arr, int sum) {
         int n = arr.length;
-        boolean dp[][] = new boolean[n + 1][sum+1];
+        boolean[][] dp = new boolean[n + 1][sum+1];
         for (int i = 0; i < dp.length; i++) {
             dp[i][0] = true;
         }
@@ -13,7 +13,7 @@ public class TargetSum {
                 int v = arr[i-1];
                 if (v <= j && dp[i-1][j-v]) {
                     dp[i][j] = true;
-                } else if (dp[i-1][j] == true) {
+                } else if (dp[i - 1][j]) {
                     dp[i][j] = true;
                 }
             }
@@ -22,6 +22,8 @@ public class TargetSum {
     }
 
     public static void main(String[] args) {
-
+        int arr[] = {4, 7, 2, 1, 3};
+        int sum = 10;
+        System.out.println(targetSum(arr, sum));
     }
 }
