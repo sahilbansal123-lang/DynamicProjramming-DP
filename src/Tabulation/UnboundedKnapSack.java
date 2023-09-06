@@ -2,9 +2,9 @@ package Tabulation;
 
 public class UnboundedKnapSack {
 
-    public static int unBoundedKnapSack(int val[], int wt[], int W) {
+    public static int unBoundedKnapSack(int[] val, int[] wt, int W) {
         int n = val.length;
-        int dp[][] = new int[n+1][W+1];
+        int[][] dp = new int[n+1][W+1];
 
         for (int i = 1; i < n+1; i++) {
             for (int j = 1; j < W+1; j++) {
