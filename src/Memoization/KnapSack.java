@@ -2,7 +2,7 @@ package Memoization;
 
 public class KnapSack {
 
-    public static int knapSack(int val[], int wt[], int W, int n, int dp[][]) {
+    public static int knapSack(int[] val, int[] wt, int W, int n, int[][] dp) {
         if (W == 0 || n == 0) {
             return 0;
         }
@@ -10,23 +10,22 @@ public class KnapSack {
         if (dp[n][W] != -1) {
             return dp[n][W];
         }
-         if (wt[n-1] <= W) {
+        if(wt[n-1] <= W) {
              int ans1 = val[n-1] + knapSack(val, wt, W-wt[n-1], n-1, dp);
              int an2 = knapSack(val, wt, W, n-1, dp);
 
              dp[n][W] = Math.max(ans1, an2);
-             return dp[n][W];
-         } else {
+        } else {
              dp[n][W] = knapSack(val, wt, W, n-1, dp);
-             return dp[n][W];
-         }
+        }
+        return dp[n][W];
     }
 
     public static void main(String[] args) {
-        int val[] = {15, 14, 10, 45, 30};
-        int wt[] = {2, 5, 1, 3, 4};
+        int[] val = {15, 14, 10, 45, 30};
+        int[] wt = {2, 5, 1, 3, 4};
         int W = 7;
-        int dp[][] = new int[val.length + 1][W + 1];
+        int[][] dp = new int[val.length + 1][W + 1];
         for (int i = 0; i < dp.length; i++) {
             for (int j = 0; j < dp[0].length; j++) {
                 dp[i][j] = -1;
