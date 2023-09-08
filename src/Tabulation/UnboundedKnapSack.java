@@ -6,6 +6,10 @@ public class UnboundedKnapSack {
         int n = val.length;
         int[][] dp = new int[n+1][W+1];
 
+        for (int i = 0; i < dp.length; i++) {
+            dp[i][0] = 0;
+        }
+
         for (int i = 1; i < n+1; i++) {
             for (int j = 1; j < W+1; j++) {
                 if (wt[i-1] <= j) {
