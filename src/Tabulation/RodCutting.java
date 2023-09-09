@@ -2,9 +2,9 @@ package Tabulation;
 
 public class RodCutting {
 
-    public static int rodCutting(int length[], int price[], int L) {
+    public static int rodCutting(int[] length, int[] price, int L) {
         int n = length.length;
-        int dp[][] = new int[n+1][L+1];
+        int[][] dp = new int[n+1][L+1];
 
         for (int i = 0; i < dp.length; i++) {
             dp[i][0] = 0;
@@ -22,8 +22,8 @@ public class RodCutting {
     }
 
     public static void main(String[] args) {
-        int length[] = {1, 2, 3, 4, 5, 6, 7, 8};
-        int price[] =  {1, 5, 8, 9, 10, 17, 17, 20};
+        int[] length = {1, 2, 3, 4, 5, 6, 7, 8};
+        int[] price =  {1, 5, 8, 9, 10, 17, 17, 20};
         int L = 8;
 
         System.out.println(rodCutting(length, price, L));
