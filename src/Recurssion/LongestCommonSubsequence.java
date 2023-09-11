@@ -10,7 +10,8 @@ public class LongestCommonSubsequence {
 
         int ans = 0;
         if (str1.charAt(n-1) == str2.charAt(m-1)) {
-            return lcs(str1, n-1, str2, m-1) + 1;
+            ans = lcs(str1, n-1, str2, m-1);
+            return ans+1;
         } else {
             int ans1 = lcs(str1, n-1, str2, m);
             int ans2 = lcs(str1, n, str2, m-1);
@@ -21,7 +22,7 @@ public class LongestCommonSubsequence {
 
     public static void main(String[] args) {
         String str1 = "abcde";
-        String str2 = "gg";
+        String str2 = "ace";
         int n = str1.length();
         int m = str2.length();
         System.out.println(lcs(str1, n, str2, m));
