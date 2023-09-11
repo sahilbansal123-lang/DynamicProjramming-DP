@@ -8,7 +8,7 @@ public class LongestCommonSubsequence {
             return 0;
         }
 
-        int ans = 0;
+        int ans;
         if (str1.charAt(n-1) == str2.charAt(m-1)) {
             ans = lcs(str1, n-1, str2, m-1);
             return ans+1;
