@@ -7,23 +7,8 @@ import java.util.TreeSet;
 
 public class LongestIncreasingSubsequence {
 
-    public static int LIS(int arr[]) {
-
-//      ------------------SORTING OF ARRAY INTO ARR2-----------------------
-        HashSet<Integer> set = new HashSet<>();
-        for (int i = 0; i < arr.length; i++) {
-            set.add(arr[i]);
-        }
-
-        TreeSet<Integer> sortedSet = new TreeSet<>(set); // Convert to TreeSet for sorting
-        int[] arr2 = new int[sortedSet.size()];
-
-        int i = 0;
-        for (Integer num : sortedSet) {
-            arr2[i++] = num;
-        }
-
-//      -------------------MAIN FUNCTION NOW PERFORM SIMPLE LCS-------------
+    public static int lcs(int arr[], int arr2[]) {
+        //      -------------------MAIN FUNCTION NOW PERFORM SIMPLE LCS-------------
         int n = arr.length;;
         int m = arr2.length;
         int dp[][] = new int[n+1][m+1];
@@ -34,8 +19,8 @@ public class LongestIncreasingSubsequence {
 
         for (int k = 0; k < n+1; k++) {
             for (int j = 0; j < m+1; j++) {
-                if (i == 0 || j == 0) {
-                    dp[i][j] = 0;
+                if (k == 0 || j == 0) {
+                    dp[k][j] = 0;
                 }
             }
         }
@@ -52,6 +37,25 @@ public class LongestIncreasingSubsequence {
             }
         }
         return dp[n][m];
+    }
+
+    public static int LIS(int arr[]) {
+
+//      ------------------SORTING OF ARRAY INTO ARR2-----------------------
+        HashSet<Integer> set = new HashSet<>();
+        for (int i = 0; i < arr.length; i++) {
+            set.add(arr[i]);
+        }
+
+        int[] arr2 = new int[set.size()];
+
+        int i = 0;
+        for (Integer num : set) {
+            arr2[i++] = num;
+        }
+        Arrays.sort(arr2);
+
+        return lcs(arr, arr2);
     }
 
     public static void main(String[] args) {
