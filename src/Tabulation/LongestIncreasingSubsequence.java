@@ -17,7 +17,7 @@ public class LongestIncreasingSubsequence {
             arr2[i] = num;
             i++;
         }
-//      --------------------------------------------------------------------
+//      -------------------MAIN FUNCTION NOW PERFORM SIMPLE LCS-------------
 
 
     }
