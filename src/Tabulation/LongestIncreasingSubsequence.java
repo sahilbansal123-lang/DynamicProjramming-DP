@@ -1,17 +1,15 @@
 package Tabulation;
 
-import java.sql.Array;
 import java.util.Arrays;
 import java.util.HashSet;
-import java.util.TreeSet;
 
 public class LongestIncreasingSubsequence {
 
-    public static int lcs(int arr[], int arr2[]) {
+    public static int lcs(int[] arr, int[] arr2) {
         //      -------------------MAIN FUNCTION NOW PERFORM SIMPLE LCS-------------
-        int n = arr.length;;
+        int n = arr.length;
         int m = arr2.length;
-        int dp[][] = new int[n+1][m+1];
+        int[][] dp = new int[n+1][m+1];
 
         if (dp[n][m] != 0) {
             return dp[n][m];
@@ -39,7 +37,7 @@ public class LongestIncreasingSubsequence {
         return dp[n][m];
     }
 
-    public static int LIS(int arr[]) {
+    public static int LIS(int[] arr) {
 
 //      ------------------SORTING OF ARRAY INTO ARR2-----------------------
         HashSet<Integer> set = new HashSet<>();
@@ -59,7 +57,7 @@ public class LongestIncreasingSubsequence {
     }
 
     public static void main(String[] args) {
-        int arr[] = {2, 3, 10, 7, 40, 80};
+        int[] arr = {2, 3, 10, 7, 40, 80};
         System.out.println(LIS(arr));
     }
 }
