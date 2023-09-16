@@ -1,7 +1,6 @@
 package Tabulation;
 
 public class CatlansNumber {
-
     public static int catlans(int n) {
         int dp[] = new int[n+1];
         dp[0] = 1;
