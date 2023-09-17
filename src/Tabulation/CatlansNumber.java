@@ -1,5 +1,5 @@
 package Tabulation;
-
+import java.util.*;
 public class CatlansNumber {
     public static int catlans(int n) {
         int[] dp = new int[n+1];
