@@ -12,6 +12,8 @@ public class CatlansNumber {
         }
         return dp[n];
     }
+
+
     public static void main(String[] args) {
         System.out.println(catlans(4));
     }
