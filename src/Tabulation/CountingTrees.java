@@ -2,7 +2,7 @@ package Tabulation;
 
 public class CountingTrees {
 
-    public static int noOfTrees(int n, int arr[]) {
+    public static int noOfTrees(int n) {
         int dp[] = new int[n+1];
         dp[0] = 1;
         dp[1] = 1;
@@ -19,8 +19,6 @@ public class CountingTrees {
 
     public static void main(String[] args) {
         int n = 4;
-        int arr[] = {10, 20, 30, 40};
-
-        System.out.println(noOfTrees(n, arr));
+        System.out.println(noOfTrees(n));
     }
 }
