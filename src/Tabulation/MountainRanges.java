@@ -17,6 +17,6 @@ public class MountainRanges {
         return dp[n];
     }
     public static void main(String[] args) {
-
+        System.out.println(countRanges(4));
     }
 }
