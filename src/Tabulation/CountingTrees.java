@@ -3,7 +3,7 @@ package Tabulation;
 public class CountingTrees {
 
     public static int noOfTrees(int n) {
-        int dp[] = new int[n+1];
+        int[] dp = new int[n+1];
         dp[0] = 1;
         dp[1] = 1;
 
