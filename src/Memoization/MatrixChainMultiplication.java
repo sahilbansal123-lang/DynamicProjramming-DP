@@ -12,7 +12,7 @@ public class MatrixChainMultiplication {
             return dp[i][j];
         }
         int minCost = Integer.MAX_VALUE;
-        for (int k = i; k < j-1; k++) {
+        for (int k = i; k <= j-1; k++) {
 
             int cost1 = mcm(arr, i, k, dp);
             int cost2 = mcm(arr, k+1, j, dp);
@@ -32,5 +32,7 @@ public class MatrixChainMultiplication {
         for (int i = 0; i < dp.length; i++) {
             Arrays.fill(dp[i], -1);
         }
+
+        System.out.println(mcm(arr, 1, n-1, dp));
     }
 }
