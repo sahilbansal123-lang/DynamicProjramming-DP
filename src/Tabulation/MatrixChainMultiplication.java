@@ -2,9 +2,9 @@ package Tabulation;
 
 public class MatrixChainMultiplication {
 
-    public static int mcm(int arr[]) {
+    public static int mcm(int[] arr) {
         int n = arr.length;
-        int dp[][] = new int[n][n];
+        int[][] dp = new int[n][n];
         // intitialization
         for (int i = 0; i < n; i++) {
             dp[i][i] = 0;
@@ -26,7 +26,7 @@ public class MatrixChainMultiplication {
     }
 
     public static void main(String[] args) {
-        int arr[] = {1, 2, 3, 4, 3};
+        int[] arr = {1, 2, 3, 4, 3};
         System.out.println(mcm(arr));
     }
 }
