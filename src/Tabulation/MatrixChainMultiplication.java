@@ -12,7 +12,7 @@ public class MatrixChainMultiplication {
         // filling in Bottom Up Manner
         for (int len = 2; len <= n-1; len++) {
             for (int i = 1; i <= n-len; i++) {
-                int j = i - len - 1;
+                int j = i + len - 1;
                 dp[i][j] = Integer.MAX_VALUE;
                 for (int k = i; k <= j-1; k++) {
                     int cost1 = dp[i][k];
@@ -26,6 +26,7 @@ public class MatrixChainMultiplication {
     }
 
     public static void main(String[] args) {
-
+        int arr[] = {1, 2, 3, 4, 3};
+        System.out.println(mcm(arr));
     }
 }
