@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class MatrixChainMultiplication {
 
-    public static int mcm(int arr[], int i, int j, int dp[][]) {
+    public static int mcm(int[] arr, int i, int j, int[][] dp) {
         if (i == j) {
             return 0;
         }
