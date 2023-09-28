@@ -3,11 +3,9 @@ package Recurssion;
 public class MatrixChainMultiplication {
 
     public static int mcm(int arr[], int i, int j) {
-
         if (i == j) {
             return 0;
         }
-
         int minCost = Integer.MAX_VALUE;
         for (int k = i; k <= j-1; k++) {
             int cost1 = mcm(arr, i, k);
