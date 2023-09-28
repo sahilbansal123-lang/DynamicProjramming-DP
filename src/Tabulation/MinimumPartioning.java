@@ -2,14 +2,14 @@ package Tabulation;
 
 public class MinimumPartioning {
 
-    public static int minPartioning(int arr[]) {
+    public static int minPartioning(int[] arr) {
         int sum = 0;
         int n = arr.length;
-        for (int i = 0; i < n; i++) {
-            sum = sum+arr[i];
+        for (int k : arr) {
+            sum = sum + k;
         }
         int W = sum/2;
-        int dp[][] = new int[n+1][W + 1];
+        int[][] dp = new int[n+1][W + 1];
 
         for (int i = 1; i < n+1; i++) {
             for (int j = 1; j < W+1; j++) {
@@ -27,7 +27,7 @@ public class MinimumPartioning {
     }
 
     public static void main(String[] args) {
-        int arr[] = {1, 6, 11, 5};
+        int[] arr = {1, 6, 11, 5};
         System.out.println(minPartioning(arr));
     }
 }
