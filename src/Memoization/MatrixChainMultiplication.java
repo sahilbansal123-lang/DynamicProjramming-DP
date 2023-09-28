@@ -12,12 +12,10 @@ public class MatrixChainMultiplication {
         }
         int minCost = Integer.MAX_VALUE;
         for (int k = i; k <= j-1; k++) {
-
             int cost1 = mcm(arr, i, k, dp);
             int cost2 = mcm(arr, k+1, j, dp);
             int cost3 = arr[i-1] * arr[k] * arr[j];
             int finalCost = cost1 + cost2 + cost3;
-
             minCost = Math.min(minCost, finalCost);
         }
         return dp[i][j] = minCost;
