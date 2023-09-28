@@ -1,5 +1,4 @@
 package Memoization;
-
 import java.util.Arrays;
 
 public class MatrixChainMultiplication {
