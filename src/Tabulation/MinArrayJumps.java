@@ -11,7 +11,7 @@ public class MinArrayJumps {
         }
 
         int ans = Integer.MAX_VALUE;
-        for (int i = n-2; i >= 0; i++) {
+        for (int i = n-2; i >= 0; i--) {
             int steps = nums[i];
             for (int j = i+1; j <= i + steps && j < n; j++) {
                 if (dp[j] != -1) {
