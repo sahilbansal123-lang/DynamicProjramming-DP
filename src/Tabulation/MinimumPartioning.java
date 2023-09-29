@@ -27,7 +27,7 @@ public class MinimumPartioning {
     }
 
     public static void main(String[] args) {
-        int[] arr = {1, 6, 11, 5};
+        int[] arr = {1, 13, 11};
         System.out.println(minPartioning(arr));
     }
 }
